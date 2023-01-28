@@ -20,7 +20,7 @@ class CustomBackground extends StatelessWidget {
           Column(
             children: [
               Container(
-                height: screenSize.height / 2,
+                height: screenSize.height * 0.45,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
@@ -35,7 +35,7 @@ class CustomBackground extends StatelessWidget {
                 ),
               ),
               Container(
-                height: screenSize.height / 2,
+                height: screenSize.height * 0.55,
                 color: Colors.grey.shade200,
               ),
             ],

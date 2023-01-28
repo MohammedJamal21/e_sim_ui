@@ -50,92 +50,134 @@ class HomeScreen extends StatelessWidget {
     return CustomBackground(
       screenSize: screenSize,
       scaffold: Scaffold(
+        backgroundColor: Colors.transparent,
         body: Padding(
-          padding: const EdgeInsets.fromLTRB(25, 50, 25, 15),
+          padding: const EdgeInsets.fromLTRB(0, 50, 0, 15), // 25,50,25,15
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const MyCustomAppBar(),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: RichText(
-                  text: const TextSpan(
-                    style: TextStyle(),
-                    children: [
-                      TextSpan(
-                        text: 'Hi ',
+              const Padding(
+                padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
+                child: MyCustomAppBar(),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 5),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: RichText(
+                    text: const TextSpan(
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontFamily: 'Montserrat',
                       ),
-                      TextSpan(
-                        text: 'Octavia,',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                      children: [
+                        TextSpan(
+                          text: 'Hi ',
                         ),
-                      ),
-                    ],
+                        TextSpan(
+                          text: 'Octavia,',
+                          style: TextStyle(
+                            
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-              const Text(
-                'This is your recent usage',
-                style: TextStyle(
-                  color: Colors.white,
+              const Padding(
+                padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
+                child: Text(
+                  'this is your recent usage',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
                 ),
               ),
               //-----------------------------------------
-              Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(15),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(25, 30, 25, 5),
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(15),
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 6,
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(
-                              10,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(
+                                10,
+                              ),
                             ),
+                            color: Colors.blue.shade300,
                           ),
-                          color: Colors.blue.shade300,
+                          padding: const EdgeInsets.all(8),
+                          child: Icon(
+                            Icons.wallet,
+                            color: Colors.blue.shade900,
+                          ),
                         ),
-                        padding: const EdgeInsets.all(8),
-                        child: Icon(
-                          Icons.wallet,
-                          color: Colors.blue.shade900,
-                        ),
-                      ),
-                      Column(
-                        children: const [
-                          Text('Balance'),
-                          Text('\$ 124.5'),
-                        ],
-                      ),
-                      const Spacer(),
-                      ElevatedButton(
-                        style: const ButtonStyle(
-                            elevation: MaterialStatePropertyAll(0),
-                            shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(
-                                    10,
-                                  ),
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Balance',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10,
+                                  color: Colors.grey.shade500,
                                 ),
                               ),
-                            )),
-                        onPressed: () {},
-                        child: const Text(
-                          '+ Top Up Balance',
+                              const SizedBox(
+                                height: 6,
+                              ),
+                              const Text(
+                                '\$ 124.5',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      )
-                    ],
+                        const Spacer(),
+                        ElevatedButton(
+                          style: const ButtonStyle(
+                              elevation: MaterialStatePropertyAll(0),
+                              shape: MaterialStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(
+                                      10,
+                                    ),
+                                  ),
+                                ),
+                              )),
+                          onPressed: () {},
+                          child: const Text(
+                            '+ Top Up Balance',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -143,259 +185,486 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                padding: const EdgeInsets.all(20),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(15),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(15),
+                    ),
                   ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            CustomContainer(
-                              backgroundColor: Colors.green.shade100,
-                              fontColor: Colors.green.shade600,
-                              content: 'In Use',
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            CustomContainer(
-                              backgroundColor: Colors.blue.shade100,
-                              fontColor: Colors.blue.shade600,
-                              content: 'Internet',
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(10),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              CustomContainer(
+                                backgroundColor: Colors.green.shade100,
+                                fontColor: Colors.green.shade600,
+                                content: 'In Use',
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              CustomContainer(
+                                backgroundColor: Colors.blue.shade100,
+                                fontColor: Colors.blue.shade600,
+                                content: 'Internet',
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                      Colors.green.shade300,
+                                      Colors.green.shade200,
+                                      Colors.green.shade100,
+                                      Colors.green.shade50,
+                                    ],
+                                  ),
                                 ),
-                                gradient: LinearGradient(
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                  colors: [
-                                    Colors.green.shade300,
-                                    Colors.green.shade200,
-                                    Colors.green.shade100,
-                                    Colors.green.shade50,
+                                child: Icon(
+                                  Icons.cell_wifi_rounded,
+                                  size: 30,
+                                  color: Colors.blue.shade700,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Text(
+                                    'Data 5 GB',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Weekly Plan',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          const Text(
+                            'Active until',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 10,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 3,
+                          ),
+                          const Text(
+                            'Feb 2, 2022',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                      //-----
+                      //const Spacer(),
+                      //-----
+                      Container(
+                        //decoration: BoxDecoration(
+                        // border: Border.all(),
+                        //),
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: CircularPercentIndicator(
+                          circularStrokeCap: CircularStrokeCap.round,
+                          backgroundColor: Colors.grey.shade300,
+                          radius: 75,
+                          lineWidth: 17,
+                          percent: 0.65,
+                          linearGradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.blue.shade800,
+                              Colors.blue.shade200
+                            ],
+                          ),
+                          center: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RichText(
+                                text: const TextSpan(
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.black,
+                                    fontFamily: 'Montserrat',
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: '3.5 ',
+                                      style: TextStyle(
+                                        fontSize: 24,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: 'GB',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
-                              child: Icon(
-                                Icons.cell_wifi_rounded,
-                                size: 30,
-                                color: Colors.blue.shade700,
+                              const SizedBox(
+                                height: 4,
                               ),
-                            ),
-                            Column(
-                              children: const [
-                                Text('Data 5 GB'),
-                                Text('Weekly Plan'),
-                              ],
-                            ),
-                          ],
+                              const Text(
+                                '/ 5 GB',
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        const Text('Active until'),
-                        const Text('Feb 2, 2022'),
-                      ],
-                    ),
-                    //-----
-                    //const Spacer(),
-                    //-----
-                    Container(
-                      child: CircularPercentIndicator(
-                        circularStrokeCap: CircularStrokeCap.round,
-                        backgroundColor: Colors.grey.shade300,
-                        radius: 60,
-                        lineWidth: 13,
-                        percent: 0.65,
-                        linearGradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [Colors.blue.shade800, Colors.blue.shade200],
-                        ),
-                        center: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              '3.5 GB',
-                            ),
-                            Text(
-                              '/ 5 GB',
-                            ),
-                          ],
-                        ),
-                      ), //Lera kotayman haw
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 35,
               ),
               //--------
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('Popular Plan'),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text('See All'),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
+                child: Container(
+                  padding: EdgeInsets.zero,
+                  width: double.infinity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const Text(
+                        'Popular Plan',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20,
+                        ),
+                      ),
+                      TextButton(
+                        style: const ButtonStyle(
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          padding: MaterialStatePropertyAll(
+                            EdgeInsets.zero,
+                          ),
+                          minimumSize: MaterialStatePropertyAll(
+                            Size.zero,
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
+              ),
+              const SizedBox(
+                height: 15,
               ),
               //--------
-              SizedBox(
-                width: double.infinity,
-                height: 180,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    //----------------------------------Custom Container
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      width: 200,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            20,
-                          ),
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(10),
-                                  ),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      Colors.green.shade300,
-                                      Colors.green.shade200,
-                                      Colors.green.shade100,
-                                      Colors.green.shade50,
-                                    ],
-                                  ),
-                                ),
-                                child: Icon(
-                                  Icons.cell_wifi_rounded,
-                                  size: 30,
-                                  color: Colors.blue.shade700,
-                                ),
-                              ),
-                              Column(
-                                children: const [
-                                  Text('Data 5 GB'),
-                                  Text('Weekly Plan'),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const Text('Internet 5 GB'),
-                          const Text('1 Week'),
-                          SizedBox(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Text('\$ 11.00'),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.arrow_forward_ios_rounded,
-                                  ),
-                                )
-                              ],
+              Padding(
+                padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 185,
+                  child: ListView(
+                    clipBehavior: Clip.antiAlias,
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      //----------------------------------Custom Container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                        width: 200,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              20,
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                    //-------------- end of Custom Container
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      width: 200,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            20,
-                          ),
                         ),
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(10),
-                                  ),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      Colors.green.shade300,
-                                      Colors.green.shade200,
-                                      Colors.green.shade100,
-                                      Colors.green.shade50,
-                                    ],
-                                  ),
-                                ),
-                                child: Icon(
-                                  Icons.cell_wifi_rounded,
-                                  size: 30,
-                                  color: Colors.blue.shade700,
-                                ),
-                              ),
-                              Column(
-                                children: const [
-                                  Text('Data 5 GB'),
-                                  Text('Weekly Plan'),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const Text('Internet 5 GB'),
-                          const Text('1 Week'),
-                          SizedBox(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              
                               children: [
-                                const Text('\$ 11.00'),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(
-                                    Icons.arrow_forward_ios_rounded,
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(10),
+                                    ),
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: [
+                                        Colors.green.shade300,
+                                        Colors.green.shade200,
+                                        Colors.green.shade100,
+                                        Colors.green.shade50,
+                                      ],
+                                    ),
                                   ),
-                                )
+                                  child: Icon(
+                                    Icons.cell_wifi_rounded,
+                                    size: 30,
+                                    color: Colors.blue.shade700,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 11,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text(
+                                      'Data 5 GB',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 4,
+                                    ),
+                                    Text(
+                                      'Weekly Plan',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 11.15,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
-                          ),
-                        ],
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            const Text(
+                              'Internet 5 GB',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 7,
+                            ),
+                            const Text(
+                              '1 Week',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 11.15,
+                              ),
+                            ),
+                            SizedBox(
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    '\$ 11.00',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  IconButton(
+                                    padding: EdgeInsets.zero,
+                                    alignment: Alignment.centerRight,
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                      Icons.arrow_forward_ios_rounded,
+                                      size: 14,
+                                      color: Colors.black,
+                                      
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    //--------------
-                  ],
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      //-------------- end of Custom Container
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                        width: 200,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              20,
+                            ),
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(10),
+                                    ),
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: [
+                                        Colors.green.shade300,
+                                        Colors.green.shade200,
+                                        Colors.green.shade100,
+                                        Colors.green.shade50,
+                                      ],
+                                    ),
+                                  ),
+                                  child: Icon(
+                                    Icons.cell_wifi_rounded,
+                                    size: 30,
+                                    color: Colors.blue.shade700,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 11,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text(
+                                      'Super 30 GB',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 4,
+                                    ),
+                                    Text(
+                                      'Monthly Plan',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 11.15,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            const Text(
+                              'Internet 5 GB',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 7,
+                            ),
+                            const Text(
+                              '1 Month',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 11.15,
+                              ),
+                            ),
+                            SizedBox(
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    '\$ 11.00',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  IconButton(
+                                    padding: EdgeInsets.zero,
+                                    alignment: Alignment.centerRight,
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                      Icons.arrow_forward_ios_rounded,
+                                      size: 14,
+                                      color: Colors.black,
+                                      
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      //--------------
+                    ],
+                  ),
                 ),
               ),
             ],

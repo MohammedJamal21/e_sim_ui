@@ -16,7 +16,7 @@ class CustomContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(
-        8,
+        5,
       ),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(
@@ -27,6 +27,7 @@ class CustomContainer extends StatelessWidget {
       child: Text(
         content,
         style: TextStyle(
+          fontSize: 12,
           color: fontColor,
         ),
       ),

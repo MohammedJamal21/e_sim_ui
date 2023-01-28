@@ -14,7 +14,7 @@ class MyCustomAppBar extends StatelessWidget {
       children: [
         const CustomContainer(
           backgroundColor: Colors.white12,
-          fontColor: Colors.white54,
+          fontColor: Colors.white,
           content: 'E-sim',
         ),
         Padding(
@@ -22,17 +22,19 @@ class MyCustomAppBar extends StatelessWidget {
             left: 15,
           ),
           child: DropdownButton(
+            iconDisabledColor: Colors.white,
             underline: Container(),
             icon: const Icon(
               Icons.keyboard_arrow_down_outlined,
+              size: 18,
             ),
             items: const [
               DropdownMenuItem(
                 child: Text(
-                  '+481234567890',
+                  '+481234567890 ',
                   style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.white60,
+                    fontSize: 12,
+                    color: Colors.white,
                   ),
                 ),
               )
