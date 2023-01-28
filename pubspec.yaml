@@ -29,6 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  percent_indicator: ^4.2.2
+  dot_navigation_bar: ^1.0.1+4
+
 
 
   # The following adds the Cupertino Icons font to your application.
