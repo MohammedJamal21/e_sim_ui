@@ -77,7 +77,6 @@ class HomeScreen extends StatelessWidget {
                         TextSpan(
                           text: 'Octavia,',
                           style: TextStyle(
-                            
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -185,181 +184,185 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
-                child: Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
-                    ),
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              CustomContainer(
-                                backgroundColor: Colors.green.shade100,
-                                fontColor: Colors.green.shade600,
-                                content: 'In Use',
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              CustomContainer(
-                                backgroundColor: Colors.blue.shade100,
-                                fontColor: Colors.blue.shade600,
-                                content: 'Internet',
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(10),
-                                  ),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      Colors.green.shade300,
-                                      Colors.green.shade200,
-                                      Colors.green.shade100,
-                                      Colors.green.shade50,
-                                    ],
-                                  ),
-                                ),
-                                child: Icon(
-                                  Icons.cell_wifi_rounded,
-                                  size: 30,
-                                  color: Colors.blue.shade700,
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text(
-                                    'Data 5 GB',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                  Text(
-                                    'Weekly Plan',
-                                    style: TextStyle(
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          const Text(
-                            'Active until',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 10,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 3,
-                          ),
-                          const Text(
-                            'Feb 2, 2022',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed('/data');
+                },
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(15),
                       ),
-                      //-----
-                      //const Spacer(),
-                      //-----
-                      Container(
-                        //decoration: BoxDecoration(
-                        // border: Border.all(),
-                        //),
-                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                        child: CircularPercentIndicator(
-                          circularStrokeCap: CircularStrokeCap.round,
-                          backgroundColor: Colors.grey.shade300,
-                          radius: 75,
-                          lineWidth: 17,
-                          percent: 0.65,
-                          linearGradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Colors.blue.shade800,
-                              Colors.blue.shade200
-                            ],
-                          ),
-                          center: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              RichText(
-                                text: const TextSpan(
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.black,
-                                    fontFamily: 'Montserrat',
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                CustomContainer(
+                                  backgroundColor: Colors.green.shade100,
+                                  fontColor: Colors.green.shade600,
+                                  content: 'In Use',
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                CustomContainer(
+                                  backgroundColor: Colors.blue.shade100,
+                                  fontColor: Colors.blue.shade600,
+                                  content: 'Internet',
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(10),
+                                    ),
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: [
+                                        Colors.green.shade300,
+                                        Colors.green.shade200,
+                                        Colors.green.shade100,
+                                        Colors.green.shade50,
+                                      ],
+                                    ),
                                   ),
-                                  children: [
-                                    TextSpan(
-                                      text: '3.5 ',
+                                  child: Icon(
+                                    Icons.cell_wifi_rounded,
+                                    size: 30,
+                                    color: Colors.blue.shade700,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text(
+                                      'Data 5 GB',
                                       style: TextStyle(
-                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
                                       ),
                                     ),
-                                    TextSpan(
-                                      text: 'GB',
+                                    Text(
+                                      'Weekly Plan',
                                       style: TextStyle(
-                                        fontSize: 12,
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.grey,
                                       ),
                                     ),
                                   ],
                                 ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            const Text(
+                              'Active until',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 10,
                               ),
-                              const SizedBox(
-                                height: 4,
+                            ),
+                            const SizedBox(
+                              height: 3,
+                            ),
+                            const Text(
+                              'Feb 2, 2022',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
                               ),
-                              const Text(
-                                '/ 5 GB',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 10,
+                            ),
+                          ],
+                        ),
+                        //-----
+                        //const Spacer(),
+                        //-----
+                        Container(
+                          //decoration: BoxDecoration(
+                          // border: Border.all(),
+                          //),
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: CircularPercentIndicator(
+                            circularStrokeCap: CircularStrokeCap.round,
+                            backgroundColor: Colors.grey.shade300,
+                            radius: 75,
+                            lineWidth: 17,
+                            percent: 0.65,
+                            linearGradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Colors.blue.shade800,
+                                Colors.blue.shade200
+                              ],
+                            ),
+                            center: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                RichText(
+                                  text: const TextSpan(
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.black,
+                                      fontFamily: 'Montserrat',
+                                    ),
+                                    children: [
+                                      TextSpan(
+                                        text: '3.5 ',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: 'GB',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                const SizedBox(
+                                  height: 4,
+                                ),
+                                const Text(
+                                  '/ 5 GB',
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -434,7 +437,6 @@ class HomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
-                              
                               children: [
                                 Container(
                                   padding: const EdgeInsets.all(10),
@@ -528,7 +530,6 @@ class HomeScreen extends StatelessWidget {
                                       Icons.arrow_forward_ios_rounded,
                                       size: 14,
                                       color: Colors.black,
-                                      
                                     ),
                                   )
                                 ],
@@ -556,7 +557,6 @@ class HomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
-                              
                               children: [
                                 Container(
                                   padding: const EdgeInsets.all(10),
@@ -636,7 +636,7 @@ class HomeScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   const Text(
-                                    '\$ 11.00',
+                                    '\$ 42.00',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w900,
                                       fontSize: 16,
@@ -650,7 +650,6 @@ class HomeScreen extends StatelessWidget {
                                       Icons.arrow_forward_ios_rounded,
                                       size: 14,
                                       color: Colors.black,
-                                      
                                     ),
                                   )
                                 ],
@@ -677,6 +676,7 @@ class HomeScreen extends StatelessWidget {
             horizontal: 25,
             vertical: 25,
           ),
+          paddingR: const EdgeInsets.fromLTRB(15, 10, 15, 10),
           dotIndicatorColor: Colors.white,
           currentIndex: 0,
           onTap: (p0) {},
@@ -712,10 +712,10 @@ class HomeScreen extends StatelessWidget {
               icon: Icon(
                 Icons.apps_rounded,
                 color: Colors.grey.shade500,
+              ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
       ),
     );
   }
