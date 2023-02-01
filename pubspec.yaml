@@ -31,6 +31,11 @@ dependencies:
     sdk: flutter
   percent_indicator: ^4.2.2
   dot_navigation_bar: ^1.0.1+4
+  tab_container: ^2.0.0
+  flutter_vector_icons: ^2.0.0
+  fl_chart: ^0.60.0
+
+
 
 
 

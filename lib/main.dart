@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
 import 'screens/data_screen.dart';
+import 'screens/usage_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,10 @@ class _MyAppState extends State<MyApp> {
         },
         DataScreen.routeName: (context) {
           return const DataScreen();
-        }
+        },
+        UsageScreen.routeName: (context) {
+          return UsageScreen();
+        },
       },
     );
   }

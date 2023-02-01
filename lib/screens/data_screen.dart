@@ -177,182 +177,188 @@ class DataScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     //------------------
-                    Container(
-                      width: 170,
-                      height: 170,
-                      padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed('/usage');
+                      },
+                      child: Container(
+                        width: 170,
+                        height: 170,
+                        padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                          color: Colors.white,
                         ),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            child: Row(
+                        child: Column(
+                          children: [
+                            Container(
+                              child: Row(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(8),
+                                    decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(10),
+                                      ),
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter,
+                                        colors: [
+                                          Color.fromARGB(255, 225, 239, 63),
+                                          Color.fromARGB(255, 239, 245, 74),
+                                          Color.fromARGB(255, 212, 227, 151),
+                                          Color.fromARGB(255, 212, 222, 173),
+                                        ],
+                                      ),
+                                    ),
+                                    child: Icon(
+                                      Icons.call,
+                                      size: 20,
+                                      color: Colors.blue.shade700,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      Text(
+                                        'Call',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Weekly',
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const Spacer(),
+                                  Flexible(
+                                    child: IconButton(
+                                      alignment: Alignment.topRight,
+                                      onPressed: () {},
+                                      icon: const Icon(
+                                        Icons.more_horiz,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                '60 min / day',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 3,
+                            ),
+                            const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                '1 Week',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 12,
+                            ),
+                            LinearPercentIndicator(
+                              backgroundColor: Colors.grey.shade200,
+                              linearGradient: LinearGradient(
+                                colors: [
+                                  Colors.blue.shade900,
+                                  Colors.blue.shade700,
+                                  Colors.blue.shade500,
+                                  Colors.blue.shade300,
+                                  Colors.blue.shade100,
+                                ],
+                              ),
+                              padding: EdgeInsets.zero,
+                              percent: 0.5,
+                              lineHeight: 8,
+                              barRadius: const Radius.circular(
+                                10,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  padding: const EdgeInsets.all(8),
-                                  decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(10),
+                                RichText(
+                                  text: const TextSpan(
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
                                     ),
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Color.fromARGB(255, 225, 239, 63),
-                                        Color.fromARGB(255, 239, 245, 74),
-                                        Color.fromARGB(255, 212, 227, 151),
-                                        Color.fromARGB(255, 212, 222, 173),
-                                      ],
-                                    ),
-                                  ),
-                                  child: Icon(
-                                    Icons.call,
-                                    size: 20,
-                                    color: Colors.blue.shade700,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      'Call',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
+                                    children: [
+                                      TextSpan(
+                                        style: TextStyle(),
+                                        text: '30',
                                       ),
-                                    ),
-                                    Text(
-                                      'Weekly',
-                                      style: TextStyle(
-                                        fontSize: 10,
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.bold,
+                                      TextSpan(
+                                        text: '/60 min',
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                                const Spacer(),
-                                Flexible(
-                                  child: IconButton(
-                                    alignment: Alignment.topRight,
-                                    onPressed: () {},
-                                    icon: const Icon(
-                                      Icons.more_horiz,
-                                      size: 18,
+                                RichText(
+                                  text: const TextSpan(
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
                                     ),
+                                    children: [
+                                      TextSpan(
+                                        style: TextStyle(),
+                                        text: '4',
+                                      ),
+                                      TextSpan(
+                                        text: '/7 day',
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
                             ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              '60 min / day',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 3,
-                          ),
-                          const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              '1 Week',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey,
-                                fontSize: 10,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 12,
-                          ),
-                          LinearPercentIndicator(
-                            backgroundColor: Colors.grey.shade200,
-                            linearGradient: LinearGradient(
-                              colors: [
-                                Colors.blue.shade900,
-                                Colors.blue.shade700,
-                                Colors.blue.shade500,
-                                Colors.blue.shade300,
-                                Colors.blue.shade100,
-                              ],
-                            ),
-                            padding: EdgeInsets.zero,
-                            percent: 0.5,
-                            lineHeight: 8,
-                            barRadius: const Radius.circular(
-                              10,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              RichText(
-                                text: const TextSpan(
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12,
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      style: TextStyle(),
-                                      text: '30',
-                                    ),
-                                    TextSpan(
-                                      text: '/60 min',
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              RichText(
-                                text: const TextSpan(
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12,
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      style: TextStyle(),
-                                      text: '4',
-                                    ),
-                                    TextSpan(
-                                      text: '/7 day',
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
 
